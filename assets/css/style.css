@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Reset CSS */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
@@ -287,7 +288,7 @@ header .wrapper .header-bottom nav ul li a {
   width: 50%;
   float: left;
   background-color: #232323;
-  padding: 64px 72px;
+  padding: 74px 72px;
   box-sizing: border-box;
   color: #ffffff;
 }
@@ -304,12 +305,83 @@ header .wrapper .header-bottom nav ul li a {
   font-weight: 300;
   padding: 15px 0 25px;
 }
+.contact .wrapper .contact-content .contact-list {
+  margin-left: 3%;
+}
+.contact .wrapper .contact-content .contact-list :first-of-type p {
+  position: relative;
+}
+.contact .wrapper .contact-content .contact-list :first-of-type p::before {
+  content: "";
+  color: #ffffff;
+  font-size: large;
+  font-family: "FontAwesome";
+  position: absolute;
+  margin-left: -3%;
+}
+.contact .wrapper .contact-content .contact-list :nth-child(2) a {
+  position: relative;
+}
+.contact .wrapper .contact-content .contact-list :nth-child(2) a::before {
+  content: "";
+  color: #ffffff;
+  font-size: large;
+  font-family: "FontAwesome";
+  position: absolute;
+  margin-left: -14%;
+}
+.contact .wrapper .contact-content .contact-list :nth-child(3) a {
+  position: relative;
+}
+.contact .wrapper .contact-content .contact-list :nth-child(3) a::before {
+  content: "";
+  color: #ffffff;
+  font-size: large;
+  font-family: "FontAwesome";
+  position: absolute;
+  margin-left: -14%;
+}
 .contact .wrapper .contact-content .contact-list li {
   padding: 12px 0;
   display: block;
 }
 .contact .wrapper .contact-content .contact-list li a {
   color: #ffffff;
+}
+.contact .wrapper .contact-content .social-link {
+  margin-top: 35px;
+}
+.contact .wrapper .contact-content .social-link li:first-of-type a::before {
+  content: "";
+  font-family: "FontAwesome";
+  margin: 0 15px;
+}
+.contact .wrapper .contact-content .social-link li:nth-child(2) a::before {
+  content: "";
+  font-family: "FontAwesome";
+  margin: 0 15px;
+}
+.contact .wrapper .contact-content .social-link li:nth-child(3) a::before {
+  content: "";
+  font-family: "FontAwesome";
+  margin: 0 15px;
+}
+.contact .wrapper .contact-content .social-link li:nth-child(4) a::before {
+  content: "";
+  font-family: "FontAwesome";
+  margin: 0 15px;
+}
+.contact .wrapper .contact-content .social-link li:nth-child(5) a::before {
+  content: "";
+  font-family: "FontAwesome";
+  margin: 0 15px;
+}
+.contact .wrapper .contact-content .social-link li a {
+  font-size: 0;
+}
+.contact .wrapper .contact-content .social-link li a::before {
+  font-size: 34px;
+  color: #a9a9a9;
 }
 
 /*# sourceMappingURL=style.css.map */

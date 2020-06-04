@@ -11,3 +11,18 @@
 @mixin text($position) {
     text-align: $position;
 }
+
+@mixin beforeIcon ($icon,$mar) {
+    content: $icon;
+    color: $lightColor;
+    font-size: large;
+    font-family: "FontAwesome";
+    position: absolute;
+    margin-left: $mar;
+}
+
+@mixin social ($logo) {
+    content: $logo;
+    font-family: "FontAwesome";
+    margin: 0 15px
+}
