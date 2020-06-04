@@ -14,7 +14,7 @@
 
 @mixin beforeIcon ($icon,$mar) {
     content: $icon;
-    color: $lightColor;
+    color: $white;
     font-size: large;
     font-family: "FontAwesome";
     position: absolute;
@@ -26,3 +26,13 @@
     font-family: "FontAwesome";
     margin: 0 15px
 }
+
+@mixin display($item) {
+    display: $item;
+}
+
+@mixin responsive($value) {
+    @media only screen and (max-width: $value) {
+      @content;
+    }
+  }

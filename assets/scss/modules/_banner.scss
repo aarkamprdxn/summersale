@@ -1,19 +1,28 @@
+@import '../variables';
+@import '../mixins';
+
 .banner{
     background: url("http://via.placeholder.com/1520x532/89abd5/89abd5");
     .banner-content {
-        padding: 86px 0 220px;
-        text-align: center;
+        @include padding (86px,220px);
+        @include text(center);
         p {
-            font-size: 24px;
-            color: #fff;
+            color: $white;
+            font-size: $medium;
         }
         h2 {
-            font-size: 70px;
-            font-weight: 700;
-            color: #fff;
-            text-transform: uppercase;
-            width: 50%;
+            width: $half;
             margin: 40px auto 0;
+            color: $white;
+            font-size: $x-large;
+            font-weight: $bolder;
+            text-transform: uppercase;
+        }
+        @include responsive($tablet) {
+            h2 {
+                width: 70%;
+                font-size: 50px;
+            }
         }
     }
 }

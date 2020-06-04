@@ -1,0 +1,164 @@
+footer {
+    background-color: $lightblack;
+    @include padding(60px,30px);
+
+    .wrapper {
+        width: 82%;
+
+        .footer-container {
+            @include display(flex);
+
+            .follow {
+                width: 45%;
+
+                h4 {
+                    color: $white;
+                    font-size: $medium-large;
+                }
+
+                .social-link-red {
+                    width: $full;
+                    margin-top: 35px;
+                    li {
+                        width: 15%;
+                        &:first-of-type {
+                            a {
+                                &::before {
+                                    @include social('\f099');
+                                }
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            a {
+                                &::before {
+                                    @include social('\f09a');
+                                }
+                            }
+                        }
+
+                        &:nth-child(3) {
+                            a {
+                                &::before {
+                                    @include social('\f167');
+                                }
+                            }
+                        }
+
+                        &:nth-child(4) {
+                            a {
+                                &::before {
+                                    @include social('\f16d');
+                                }
+                            }
+                        }
+
+                        &:nth-child(5) {
+                            a {
+                                &::before {
+                                    @include social('\f0d5');
+                                }
+                            }
+                        }
+
+                        a {
+                            font-size: 0;
+
+                            &::before {
+                                padding: 10px 12px;
+                                border-radius: 50%;
+                                background-color: $lightred;
+                                color: $white;
+                                font-size: $medium-large;
+                            }
+                        }
+                    }
+                }
+
+                .footer-list {
+                    width: 50%;
+                    margin-top: 20px;
+                    float: left;
+
+                    li {
+                        @include display(block);
+                        line-height: 1.8;
+
+                        a {
+                            color: $white;
+                            font-size: $small;
+                        }
+                    }
+                }
+                @include responsive($tablet) {
+                    padding-bottom: 48%;
+                }
+            }
+
+            .footer-content {
+                .footer-head {
+                    margin-bottom: 20px;
+
+                    li {
+                        a {
+                            margin-right: 10px;
+                            color: $white;
+                            font-size: $medium-large;
+                            @include responsive($tablet){
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                }
+
+                p {
+                    margin: 10px 0;
+                    color: $white;
+                    font-size: $medium;
+                }
+
+                form {
+                    input {
+                        padding: 10px 15%;
+                        border-radius: 20px;
+                        border: none;
+                        margin-right: 20px;
+
+                        @include responsive ($tablet) {
+                            padding: 10px 14%;
+                        }
+                    }
+
+                    a {
+                        padding: 10px 6%;
+                        border-radius: 20px;
+                        background-color: $lightred;
+                        color: $white;
+                        font-size: 16px;
+                    }
+                }
+
+                h5 {
+                    margin-bottom: 10px;
+                    color: $white;
+                    font-size: $medium;
+                }
+
+                .footer-sponser {
+                    img {
+                        border-radius: 4px;
+                    }
+                }
+            }
+            @include responsive($notebook) {
+                @include display(block);
+                .follow {
+                    width: $full;
+                }
+                .footer-content {
+                    width: $full;
+                }
+            }
+        }
+    }
+}

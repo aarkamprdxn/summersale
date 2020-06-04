@@ -1,26 +1,38 @@
 @import '../mixins';
+@import '../variables';
+
 header {
     .wrapper {
-        width: 100%;
+        width: $full;
         .header-top {
-            background-color: #fe525b;
+            background-color: $lightred;
             p {
-                color: #fff;
-                font-size: 18px;
-                text-align: center;
                 padding: 12px 0;
+                color: $white;
+                font-size: $small;
+                @include text(center);
+            }
+            @include responsive($notebook) {
+                @include display(none);
             }
         }
         .header-bottom {
-            background-color: #f4f7fa;
+            background-color: $fadewhite;
             nav {
                 ul {
                     @include flex(space-around);
                     margin: 0 13% 0 21%;
                     li {
+                        &:nth-child(even) {
+                            a::after {
+                                content: '\f0d7';
+                                font-family: "FontAwesome";
+                                margin-left: 5px;
+                            }
+                        }
                         a {
-                            color: #000;
-                            font-weight: 600;
+                            color: $black;
+                            font-weight: $bold;
                         }
                     }
                 }
