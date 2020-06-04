@@ -1,13 +1,4 @@
-@charset "utf-8";
-/* ==========================================================================
-   1. CSS Reset Code
-   ========================================================================== */
-
-/* 1.1. Eric Meyers Reset
-   http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-   ========================================================================== */
+/* Reset CSS */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
 ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
@@ -30,16 +21,19 @@ footer, header, hgroup, menu, nav, section {
 }
 
 /* Force scrollbar */
-html { overflow-y: scroll; }
+html {
+  overflow-y: scroll;
+}
 
 /* Align radios and text inputs with their label */
-
-input[type='radio'] { vertical-align: text-bottom; }
+input[type=radio] {
+  vertical-align: text-bottom;
+}
 
 /* Hand cursor on clickable input elements */
 label,
-input[type='button'],
-input[type='submit'],
+input[type=button],
+input[type=submit],
 button {
   cursor: pointer;
 }
@@ -50,7 +44,9 @@ strong {
   font-size: inherit;
 }
 
-em { font-style: italic; }
+em {
+  font-style: italic;
+}
 
 img {
   width: 100%;
@@ -66,20 +62,28 @@ sup {
   line-height: 0;
 }
 
-sup { top: -.7em; }
-sub { bottom: -.25em; }
+sup {
+  top: -0.7em;
+}
 
-/* 1.2. Clear Fix
-   ========================== */
+sub {
+  bottom: -0.25em;
+}
 
+/* 1.2. Clear Fix ========================== */
 .cf:before,
 .cf:after {
   display: table;
   content: " ";
 }
 
-.cf:after { clear: both; }
-.cf { *zoom: 1; }
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
 
 /*for all*/
 body {
@@ -87,9 +91,9 @@ body {
   font-family: sans-serif;
 }
 
-a { 
+a {
   display: inline-block;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 li {
@@ -97,58 +101,215 @@ li {
   list-style-type: none;
 }
 
-/*for wrapper*/
+/* for wrapper */
 .wrapper {
-  max-width: 1360px;
-  width: 86%; 
+  max-width: 1520px;
+  width: 96%;
   margin: 0 auto;
 }
-/*=================================
-  Header styling starts here
-=================================*/
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
 
+h3 {
+  font-size: 38px;
+  text-align: center;
+}
+h3::after {
+  content: "";
+  width: 7%;
+  height: 3px;
+  display: block;
+  background: linear-gradient(90deg, #a38dfd, #fe525b);
+  margin: 10px auto;
+}
 
+header .wrapper {
+  width: 100%;
+}
+header .wrapper .header-top {
+  background-color: #fe525b;
+}
+header .wrapper .header-top p {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  padding: 12px 0;
+}
+header .wrapper .header-bottom {
+  background-color: #f4f7fa;
+}
+header .wrapper .header-bottom nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 13% 0 21%;
+}
+header .wrapper .header-bottom nav ul li a {
+  color: #000;
+  font-weight: 600;
+}
 
+.banner {
+  background: url("http://via.placeholder.com/1520x532/89abd5/89abd5");
+}
+.banner .banner-content {
+  padding: 86px 0 220px;
+  text-align: center;
+}
+.banner .banner-content p {
+  font-size: 24px;
+  color: #fff;
+}
+.banner .banner-content h2 {
+  font-size: 70px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  width: 50%;
+  margin: 40px auto 0;
+}
 
+.sale-start {
+  padding: 86px 0 180px;
+}
+.sale-start .time {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 70px 24% 0;
+}
+.sale-start .time li {
+  background: linear-gradient(90deg, #a38dfd, #fe525b);
+  text-align: center;
+  width: 17%;
+  color: #ffffff;
+  padding: 10px 0;
+}
+.sale-start .time li span {
+  font-size: 50px;
+  font-weight: 700;
+  border-bottom: 1px solid #d3d3dd;
+}
+.sale-start .time li p {
+  font-size: 20px;
+}
 
-/*=================================
-  Header styling ends here
-=================================*/  
+.gallery-pics {
+  padding-bottom: 45%;
+}
+.gallery-pics li {
+  width: 24.8%;
+  float: left;
+  border: 0.5px solid #778899;
+}
+.gallery-pics li figure {
+  position: relative;
+}
+.gallery-pics li figure span {
+  position: absolute;
+  padding: 5px 3%;
+  background-color: #fe525b;
+  color: #ffffff;
+  top: 0;
+  left: 0;
+}
 
-/*=================================
-  main styling starts here
-=================================*/
+.purchase {
+  margin-top: 105px;
+  padding: 68px 0 74px;
+  background: linear-gradient(90deg, #ffa0a4, #16a16c);
+}
+.purchase .purchase-content {
+  text-align: center;
+}
+.purchase .purchase-content h3 {
+  color: #ffffff;
+  font-size: 46px;
+  font-weight: 700;
+  width: 50%;
+  margin: 0 auto;
+}
+.purchase .purchase-content h3::after {
+  display: none;
+}
+.purchase .purchase-content p {
+  font-size: 26px;
+  color: #ffffff;
+  padding: 16px 0 24px;
+}
+.purchase .purchase-content .purchase-btn li:first-child {
+  margin-right: 2%;
+}
+.purchase .purchase-content .purchase-btn li:nth-child(2) a {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  margin: -2px;
+}
+.purchase .purchase-content .purchase-btn li a {
+  padding: 12px 30px;
+  border-radius: 24px;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: #000;
+}
 
+.supported {
+  padding: 84px 0 120px;
+}
+.supported h3 {
+  margin-bottom: 50px;
+}
+.supported h3::after {
+  margin-top: 30px;
+}
+.supported .sponser {
+  margin: 0 20%;
+  text-align: center;
+}
+.supported .sponser li {
+  margin: 5px;
+}
+.supported .sponser li img {
+  border-radius: 4px;
+}
 
+.contact .wrapper {
+  width: 100%;
+}
+.contact .wrapper .map {
+  width: 50%;
+  float: left;
+}
+.contact .wrapper .contact-content {
+  width: 50%;
+  float: left;
+  background-color: #232323;
+  padding: 64px 72px;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+.contact .wrapper .contact-content h3 {
+  font-size: 46px;
+  text-align: left;
+}
+.contact .wrapper .contact-content h3::after {
+  margin-left: 0;
+}
+.contact .wrapper .contact-content h4 {
+  font-size: 26px;
+  color: #d3d3dd;
+  font-weight: 300;
+  padding: 15px 0 25px;
+}
+.contact .wrapper .contact-content .contact-list li {
+  padding: 12px 0;
+  display: block;
+}
+.contact .wrapper .contact-content .contact-list li a {
+  color: #ffffff;
+}
 
-
-
-
-
-
-/*=================================
-  main styling ends here
-=================================*/
-
-/*=================================
-  footer styling starts here
-=================================*/ 
-
-
-
-
-
-
-
- /*=================================
-  footer styling ends here
-=================================*/ 
-
-/*media query starts*/
-/*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {
-
-
-
-}  
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,30 @@
+@import '../mixins';
+header {
+    .wrapper {
+        width: 100%;
+        .header-top {
+            background-color: #fe525b;
+            p {
+                color: #fff;
+                font-size: 18px;
+                text-align: center;
+                padding: 12px 0;
+            }
+        }
+        .header-bottom {
+            background-color: #f4f7fa;
+            nav {
+                ul {
+                    @include flex(space-around);
+                    margin: 0 13% 0 21%;
+                    li {
+                        a {
+                            color: #000;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
