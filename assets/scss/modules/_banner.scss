@@ -24,5 +24,10 @@
                 font-size: 50px;
             }
         }
+        @include responsive($phone) {
+            h2 {
+                font-size: 36px;
+            }
+        }
     }
 }

@@ -24,15 +24,24 @@
 @mixin social ($logo) {
     content: $logo;
     font-family: "FontAwesome";
-    margin: 0 15px
+    margin: 0 15px;
+    @include responsive($phone){
+        margin: 0 5px;
+    }
 }
 
 @mixin display($item) {
     display: $item;
 }
 
-@mixin responsive($value) {
-    @media only screen and (max-width: $value) {
+@mixin responsive($device) {
+    @media only screen and (max-width: $device) {
+      @content;
+    }
+  }
+
+  @mixin responsive-min($device) {
+    @media only screen and (min-width: $device) {
       @content;
     }
   }

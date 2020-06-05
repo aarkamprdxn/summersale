@@ -63,13 +63,26 @@ footer {
 
                         a {
                             font-size: 0;
-
+                            padding: 10px 0;
+                            border-radius: 50%;
+                            color: $white;
+                            background-color: $lightred;
+                            
                             &::before {
-                                padding: 10px 12px;
-                                border-radius: 50%;
-                                background-color: $lightred;
-                                color: $white;
                                 font-size: $medium-large;
+                            }
+                            @include responsive-min($desktop) {
+                                &:hover {
+                                    background-color: $white;
+                                    color: $lightred;
+                                    transition: .4s;
+                                }
+                            }
+                        }
+                        @include responsive($phone){
+                            width: 18%;
+                            a {
+                                padding: 10px 15%;
                             }
                         }
                     }
@@ -81,17 +94,23 @@ footer {
                     float: left;
 
                     li {
-                        @include display(block);
                         line-height: 1.8;
+                        @include display(block);
 
                         a {
                             color: $white;
                             font-size: $small;
+                            @include responsive-min($desktop) {
+                                &:hover {
+                                    color: $lightred;
+                                    transition: .3s;
+                                }
+                            }
                         }
                     }
                 }
                 @include responsive($tablet) {
-                    padding-bottom: 48%;
+                    padding-bottom: 200px;
                 }
             }
 
@@ -109,6 +128,9 @@ footer {
                             }
                         }
                     }
+                    @include responsive($phone){
+                        margin: 50px 0 20px;
+                    }
                 }
 
                 p {
@@ -119,10 +141,12 @@ footer {
 
                 form {
                     input {
-                        padding: 10px 15%;
+                        padding: 10px 27% 10px 3%;
                         border-radius: 20px;
                         border: none;
                         margin-right: 20px;
+                        outline: none;
+                        @include text(left);
 
                         @include responsive ($tablet) {
                             padding: 10px 14%;
@@ -135,6 +159,19 @@ footer {
                         background-color: $lightred;
                         color: $white;
                         font-size: 16px;
+                        font-weight: $bold;
+                        @include responsive-min($desktop) {
+                            &:hover{
+                                background-color: transparent;
+                                color: $lightred;
+                                border: 2px solid $lightred;
+                                margin: -2px;
+                                transition: .2s;
+                            }
+                        }
+                        @include responsive($phone){
+                            margin: 10px 64px 0;
+                        }
                     }
                 }
 

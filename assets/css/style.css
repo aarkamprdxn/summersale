@@ -125,6 +125,11 @@ h3::after {
   background: linear-gradient(90deg, #a38dfd, #fe525b);
   margin: 10px auto;
 }
+@media only screen and (max-width: 768px) {
+  h3 {
+    font-size: 34px;
+  }
+}
 
 header .wrapper {
   width: 100%;
@@ -145,21 +150,73 @@ header .wrapper .header-top p {
 }
 header .wrapper .header-bottom {
   background-color: #f4f7fa;
+  position: relative;
+}
+header .wrapper .header-bottom .hamburger {
+  display: none;
+}
+@media only screen and (max-width: 995px) {
+  header .wrapper .header-bottom .hamburger {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    font-size: 34px;
+    display: block;
+  }
+}
+@media only screen and (max-width: 540px) {
+  header .wrapper .header-bottom .hamburger {
+    font-size: 28px;
+  }
 }
 header .wrapper .header-bottom nav ul {
+  margin: 0 13% 0 21%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 0 13% 0 21%;
 }
 header .wrapper .header-bottom nav ul li:nth-child(even) a::after {
   content: "";
   font-family: "FontAwesome";
   margin-left: 5px;
 }
+@media only screen and (max-width: 995px) {
+  header .wrapper .header-bottom nav ul li:nth-child(even) {
+    display: none;
+  }
+}
 header .wrapper .header-bottom nav ul li a {
   color: #000;
   font-weight: 600;
+}
+@media only screen and (min-width: 1024px) {
+  header .wrapper .header-bottom nav ul li a:hover {
+    color: #fe525b;
+    transition: 0.3s;
+  }
+}
+@media only screen and (max-width: 995px) {
+  header .wrapper .header-bottom nav ul li:first-child {
+    display: none;
+  }
+  header .wrapper .header-bottom nav ul li:last-child {
+    display: none;
+  }
+  header .wrapper .header-bottom nav ul li h1 {
+    width: 80%;
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 995px) and (max-width: 540px) {
+  header .wrapper .header-bottom nav ul li h1 {
+    width: 65%;
+  }
+}
+@media only screen and (max-width: 995px) {
+  header .wrapper .header-bottom nav ul {
+    margin: 0;
+    display: block;
+  }
 }
 
 .banner {
@@ -187,25 +244,30 @@ header .wrapper .header-bottom nav ul li a {
     font-size: 50px;
   }
 }
+@media only screen and (max-width: 540px) {
+  .banner .banner-content h2 {
+    font-size: 36px;
+  }
+}
 
 .sale-start {
   padding: 86px 0 180px;
 }
 .sale-start .time {
+  margin: 70px 24% 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 70px 24% 0;
 }
 .sale-start .time li {
-  text-align: center;
   width: 17%;
   padding: 10px 0;
   background: linear-gradient(90deg, #a38dfd, #fe525b);
   color: #fff;
+  text-align: center;
 }
 .sale-start .time li span {
-  border-bottom: 1px solid #d3d3dd;
+  border-bottom: 1px solid #f4f7fa;
   font-size: 50px;
   font-weight: 700;
 }
@@ -215,6 +277,21 @@ header .wrapper .header-bottom nav ul li a {
 @media only screen and (max-width: 995px) {
   .sale-start .time {
     margin: 70px 5% 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .sale-start .time {
+    display: block;
+  }
+  .sale-start .time li {
+    width: 25%;
+    margin: 0 auto 10px;
+    display: block;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .sale-start {
+    padding: 86px 0 86px;
   }
 }
 
@@ -236,6 +313,14 @@ header .wrapper .header-bottom nav ul li a {
   left: 0;
   background-color: #fe525b;
   color: #fff;
+}
+@media only screen and (max-width: 540px) {
+  .gallery-pics {
+    padding-bottom: 160%;
+  }
+  .gallery-pics li {
+    width: 49%;
+  }
 }
 
 .purchase {
@@ -264,11 +349,26 @@ header .wrapper .header-bottom nav ul li a {
 .purchase .purchase-content .purchase-btn li:first-child {
   margin-right: 2%;
 }
+@media only screen and (min-width: 1024px) {
+  .purchase .purchase-content .purchase-btn li:first-child a:hover {
+    border: 2px solid #fff;
+    margin: -2px;
+    background-color: transparent;
+    color: #fff;
+    transition: 0.3s;
+  }
+}
 .purchase .purchase-content .purchase-btn li:nth-child(2) a {
   border: 2px solid #fff;
-  margin: -2px;
   color: #fff;
   background-color: transparent;
+}
+@media only screen and (min-width: 1024px) {
+  .purchase .purchase-content .purchase-btn li:nth-child(2) a:hover {
+    background-color: #fff;
+    color: #000;
+    transition: 0.3s;
+  }
 }
 .purchase .purchase-content .purchase-btn li a {
   padding: 12px 30px;
@@ -277,8 +377,18 @@ header .wrapper .header-bottom nav ul li a {
   background-color: #fff;
   font-weight: 600;
 }
+@media only screen and (max-width: 540px) {
+  .purchase .purchase-content .purchase-btn li {
+    display: block;
+  }
+  .purchase .purchase-content .purchase-btn li:first-child {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+}
 @media only screen and (max-width: 768px) {
   .purchase .purchase-content h3 {
+    width: 82%;
     font-size: 34px;
   }
 }
@@ -305,6 +415,11 @@ header .wrapper .header-bottom nav ul li a {
 @media only screen and (max-width: 995px) {
   .supported .sponser {
     margin: 0 15%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .supported .sponser {
+    margin: 0 10%;
   }
 }
 
@@ -352,7 +467,7 @@ header .wrapper .header-bottom nav ul li a {
   font-size: large;
   font-family: "FontAwesome";
   position: absolute;
-  margin-left: -5%;
+  margin-left: -20px;
 }
 .contact .wrapper .contact-container .contact-content .contact-list :nth-child(2) a {
   position: relative;
@@ -383,6 +498,17 @@ header .wrapper .header-bottom nav ul li a {
 .contact .wrapper .contact-container .contact-content .contact-list li a {
   color: #fff;
 }
+@media only screen and (min-width: 1024px) {
+  .contact .wrapper .contact-container .contact-content .contact-list li a:hover {
+    color: #fe525b;
+    transition: 0.3s;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .contact .wrapper .contact-container .contact-content h3 {
+    font-size: 34px;
+  }
+}
 .contact .wrapper .contact-container .social-link {
   margin-top: 35px;
 }
@@ -391,32 +517,68 @@ header .wrapper .header-bottom nav ul li a {
   font-family: "FontAwesome";
   margin: 0 15px;
 }
+@media only screen and (max-width: 540px) {
+  .contact .wrapper .contact-container .social-link li:first-of-type a::before {
+    margin: 0 5px;
+  }
+}
 .contact .wrapper .contact-container .social-link li:nth-child(2) a::before {
   content: "";
   font-family: "FontAwesome";
   margin: 0 15px;
+}
+@media only screen and (max-width: 540px) {
+  .contact .wrapper .contact-container .social-link li:nth-child(2) a::before {
+    margin: 0 5px;
+  }
 }
 .contact .wrapper .contact-container .social-link li:nth-child(3) a::before {
   content: "";
   font-family: "FontAwesome";
   margin: 0 15px;
 }
+@media only screen and (max-width: 540px) {
+  .contact .wrapper .contact-container .social-link li:nth-child(3) a::before {
+    margin: 0 5px;
+  }
+}
 .contact .wrapper .contact-container .social-link li:nth-child(4) a::before {
   content: "";
   font-family: "FontAwesome";
   margin: 0 15px;
+}
+@media only screen and (max-width: 540px) {
+  .contact .wrapper .contact-container .social-link li:nth-child(4) a::before {
+    margin: 0 5px;
+  }
 }
 .contact .wrapper .contact-container .social-link li:nth-child(5) a::before {
   content: "";
   font-family: "FontAwesome";
   margin: 0 15px;
 }
+@media only screen and (max-width: 540px) {
+  .contact .wrapper .contact-container .social-link li:nth-child(5) a::before {
+    margin: 0 5px;
+  }
+}
 .contact .wrapper .contact-container .social-link li a {
+  color: #a9a9a9;
   font-size: 0;
 }
 .contact .wrapper .contact-container .social-link li a::before {
-  color: #a9a9a9;
   font-size: 34px;
+}
+@media only screen and (max-width: 540px) {
+  .contact .wrapper .contact-container .social-link li a::before {
+    font-size: 24px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .contact .wrapper .contact-container .social-link li a:hover {
+    color: #fe525b;
+    transition: 0.3s;
+  }
 }
 @media only screen and (max-width: 995px) {
   .contact .wrapper .contact-container {
@@ -459,35 +621,75 @@ footer .wrapper .footer-container .follow .social-link-red li:first-of-type a::b
   font-family: "FontAwesome";
   margin: 0 15px;
 }
+@media only screen and (max-width: 540px) {
+  footer .wrapper .footer-container .follow .social-link-red li:first-of-type a::before {
+    margin: 0 5px;
+  }
+}
 footer .wrapper .footer-container .follow .social-link-red li:nth-child(2) a::before {
   content: "";
   font-family: "FontAwesome";
   margin: 0 15px;
+}
+@media only screen and (max-width: 540px) {
+  footer .wrapper .footer-container .follow .social-link-red li:nth-child(2) a::before {
+    margin: 0 5px;
+  }
 }
 footer .wrapper .footer-container .follow .social-link-red li:nth-child(3) a::before {
   content: "";
   font-family: "FontAwesome";
   margin: 0 15px;
 }
+@media only screen and (max-width: 540px) {
+  footer .wrapper .footer-container .follow .social-link-red li:nth-child(3) a::before {
+    margin: 0 5px;
+  }
+}
 footer .wrapper .footer-container .follow .social-link-red li:nth-child(4) a::before {
   content: "";
   font-family: "FontAwesome";
   margin: 0 15px;
+}
+@media only screen and (max-width: 540px) {
+  footer .wrapper .footer-container .follow .social-link-red li:nth-child(4) a::before {
+    margin: 0 5px;
+  }
 }
 footer .wrapper .footer-container .follow .social-link-red li:nth-child(5) a::before {
   content: "";
   font-family: "FontAwesome";
   margin: 0 15px;
 }
+@media only screen and (max-width: 540px) {
+  footer .wrapper .footer-container .follow .social-link-red li:nth-child(5) a::before {
+    margin: 0 5px;
+  }
+}
 footer .wrapper .footer-container .follow .social-link-red li a {
   font-size: 0;
+  padding: 10px 0;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #fe525b;
 }
 footer .wrapper .footer-container .follow .social-link-red li a::before {
-  padding: 10px 12px;
-  border-radius: 50%;
-  background-color: #fe525b;
-  color: #fff;
   font-size: 24px;
+}
+@media only screen and (min-width: 1024px) {
+  footer .wrapper .footer-container .follow .social-link-red li a:hover {
+    background-color: #fff;
+    color: #fe525b;
+    transition: 0.4s;
+  }
+}
+@media only screen and (max-width: 540px) {
+  footer .wrapper .footer-container .follow .social-link-red li {
+    width: 18%;
+  }
+  footer .wrapper .footer-container .follow .social-link-red li a {
+    padding: 10px 15%;
+  }
 }
 footer .wrapper .footer-container .follow .footer-list {
   width: 50%;
@@ -495,16 +697,22 @@ footer .wrapper .footer-container .follow .footer-list {
   float: left;
 }
 footer .wrapper .footer-container .follow .footer-list li {
-  display: block;
   line-height: 1.8;
+  display: block;
 }
 footer .wrapper .footer-container .follow .footer-list li a {
   color: #fff;
   font-size: 18px;
 }
+@media only screen and (min-width: 1024px) {
+  footer .wrapper .footer-container .follow .footer-list li a:hover {
+    color: #fe525b;
+    transition: 0.3s;
+  }
+}
 @media only screen and (max-width: 768px) {
   footer .wrapper .footer-container .follow {
-    padding-bottom: 48%;
+    padding-bottom: 200px;
   }
 }
 footer .wrapper .footer-container .footer-content .footer-head {
@@ -520,16 +728,23 @@ footer .wrapper .footer-container .footer-content .footer-head li a {
     font-size: 22px;
   }
 }
+@media only screen and (max-width: 540px) {
+  footer .wrapper .footer-container .footer-content .footer-head {
+    margin: 50px 0 20px;
+  }
+}
 footer .wrapper .footer-container .footer-content p {
   margin: 10px 0;
   color: #fff;
   font-size: 20px;
 }
 footer .wrapper .footer-container .footer-content form input {
-  padding: 10px 15%;
+  padding: 10px 27% 10px 3%;
   border-radius: 20px;
   border: none;
   margin-right: 20px;
+  outline: none;
+  text-align: left;
 }
 @media only screen and (max-width: 768px) {
   footer .wrapper .footer-container .footer-content form input {
@@ -542,6 +757,21 @@ footer .wrapper .footer-container .footer-content form a {
   background-color: #fe525b;
   color: #fff;
   font-size: 16px;
+  font-weight: 600;
+}
+@media only screen and (min-width: 1024px) {
+  footer .wrapper .footer-container .footer-content form a:hover {
+    background-color: transparent;
+    color: #fe525b;
+    border: 2px solid #fe525b;
+    margin: -2px;
+    transition: 0.2s;
+  }
+}
+@media only screen and (max-width: 540px) {
+  footer .wrapper .footer-container .footer-content form a {
+    margin: 10px 64px 0;
+  }
 }
 footer .wrapper .footer-container .footer-content h5 {
   margin-bottom: 10px;

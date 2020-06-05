@@ -4,24 +4,43 @@
 header {
     .wrapper {
         width: $full;
+
         .header-top {
             background-color: $lightred;
+
             p {
                 padding: 12px 0;
                 color: $white;
                 font-size: $small;
                 @include text(center);
             }
+
             @include responsive($notebook) {
                 @include display(none);
             }
         }
+
         .header-bottom {
             background-color: $fadewhite;
+            position: relative;
+            .hamburger {
+                @include display(none);
+                @include responsive($notebook){
+                    position: absolute;
+                    right: 5%;
+                    top: 5%;
+                    font-size: 34px;
+                    @include display(block);
+                }
+                @include responsive($phone){
+                    font-size: 28px;
+                }
+            }
             nav {
                 ul {
-                    @include flex(space-around);
                     margin: 0 13% 0 21%;
+                    @include flex(space-around);
+
                     li {
                         &:nth-child(even) {
                             a::after {
@@ -29,11 +48,45 @@ header {
                                 font-family: "FontAwesome";
                                 margin-left: 5px;
                             }
+
+                            @include responsive ($notebook) {
+                                @include display (none);
+                            }
                         }
+
                         a {
                             color: $black;
-                            font-weight: $bold;
+                            font-weight: $bold; 
+                            @include responsive-min($desktop){
+                                &:hover {
+                                    color: $lightred;
+                                    transition: .3s;
+                                }
+                            }
                         }
+
+                        @include responsive ($notebook) {
+                            &:first-child {
+                                @include display (none);
+                            }
+
+                            &:last-child {
+                                @include display (none);
+                            }
+
+                            h1 {
+                                width: 80%;
+                                margin-left: 0;
+                                @include responsive($phone){
+                                    width: 65%;
+                                }
+                            }
+                        }
+                    }
+
+                    @include responsive($notebook) {
+                        margin: 0;
+                        @include display(block);
                     }
                 }
             }

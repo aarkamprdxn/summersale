@@ -1,22 +1,19 @@
-@import '../variables';
-@import '../mixins';
-
 .sale-start {
     @include padding (86px, 180px);
 
     .time {
-        @include flex(space-around);
         margin: 70px 24% 0;
+        @include flex(space-around);
 
         li {
-            @include text(center);
             width: 17%;
             padding: 10px 0;
             background: linear-gradient(90deg, #a38dfd, $lightred);
             color: $white;
+            @include text(center);
 
             span {
-                border-bottom: 1px solid #d3d3dd;
+                border-bottom: 1px solid $fadewhite;
                 font-size: 50px;
                 font-weight: $bolder;
             }
@@ -29,6 +26,20 @@
         @include responsive ($notebook) {
             margin: 70px 5% 0;
         }
+
+        @include responsive ($phone) {
+            @include display(block);
+
+            li {
+                width: 25%;
+                margin: 0 auto 10px;
+                @include display (block);
+            }
+        }
+    }
+
+    @include responsive ($phone) {
+        @include padding(86px, 86px);
     }
 }
 
@@ -51,6 +62,14 @@
                 background-color: $lightred;
                 color: $white;
             }
+        }
+    }
+
+    @include responsive($phone) {
+        padding-bottom: 160%;
+
+        li {
+            width: 49%;
         }
     }
 }
@@ -85,14 +104,31 @@
             li {
                 &:first-child {
                     margin-right: 2%;
+                    @include responsive-min($desktop) {
+                        a {
+                            &:hover{
+                                border: 2px solid $white;
+                                margin: -2px;
+                                background-color: transparent;
+                                color: $white;
+                                transition: .3s;
+                            }
+                        }
+                    }
                 }
 
                 &:nth-child(2) {
                     a {
                         border: 2px solid $white;
-                        margin: -2px;
                         color: $white;
                         background-color: transparent;
+                        @include responsive-min($desktop){
+                            &:hover {
+                                background-color: $white;
+                                color: $black;
+                                transition: .3s;
+                            }
+                        }
                     }
                 }
 
@@ -103,10 +139,21 @@
                     background-color: $white;
                     font-weight: $bold;
                 }
+
+                @include responsive ($phone) {
+                    @include display(block);
+
+                    &:first-child {
+                        margin-bottom: 15px;
+                        margin-right: 0;
+                    }
+                }
             }
         }
+
         @include responsive($tablet) {
             h3 {
+                width: 82%;
                 font-size: 34px;
             }
         }
@@ -135,8 +182,13 @@
                 border-radius: 4px;
             }
         }
+
         @include responsive($notebook) {
             margin: 0 15%;
+        }
+
+        @include responsive($phone) {
+            margin: 0 10%;
         }
     }
 }
@@ -187,7 +239,7 @@
                             position: relative;
 
                             &::before {
-                                @include beforeIcon('\f041', -5%);
+                                @include beforeIcon('\f041', -20px);
                             }
                         }
                     }
@@ -218,7 +270,20 @@
 
                         a {
                             color: $white;
+
+                            @include responsive-min($desktop) {
+                                &:hover {
+                                    color: $lightred;
+                                    transition: .3s;
+                                }
+                            }
                         }
+                    }
+                }
+
+                @include responsive($tablet) {
+                    h3 {
+                        font-size: 34px;
                     }
                 }
             }
@@ -268,21 +333,35 @@
                     }
 
                     a {
+                        color: $lightgray;
                         font-size: 0;
 
                         &::before {
-                            color: $lightgray;
                             font-size: 34px;
+
+                            @include responsive($phone) {
+                                font-size: 24px;
+                            }
+                        }
+
+                        @include responsive-min($desktop) {
+                            &:hover {
+                                color: $lightred;
+                                transition: .3s;
+                            }
                         }
                     }
 
                 }
             }
+
             @include responsive($notebook) {
                 @include display(block);
+
                 .map {
                     width: $full;
                 }
+
                 .contact-content {
                     width: $full;
                 }

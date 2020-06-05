@@ -1,4 +1,5 @@
-@import './mixins';
+@import 'mixins';
+@import 'variables';
 /* for wrapper */
 .wrapper {
     max-width: 1520px;
@@ -21,4 +22,10 @@
       background: linear-gradient(90deg, #a38dfd, #fe525b);
       margin: 10px auto;
     }
+
+    @include responsive($tablet) {
+      font-size: 34px;
+    }
   }
+
+  
