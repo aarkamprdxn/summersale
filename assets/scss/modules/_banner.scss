@@ -1,0 +1,33 @@
+@import '../variables';
+@import '../mixins';
+
+.banner{
+    background: url("http://via.placeholder.com/1520x532/89abd5/89abd5");
+    .banner-content {
+        @include padding (86px,220px);
+        @include text(center);
+        p {
+            color: $white;
+            font-size: $medium;
+        }
+        h2 {
+            width: $half;
+            margin: 40px auto 0;
+            color: $white;
+            font-size: $x-large;
+            font-weight: $bolder;
+            text-transform: uppercase;
+        }
+        @include responsive($tablet) {
+            h2 {
+                width: 70%;
+                font-size: 50px;
+            }
+        }
+        @include responsive($phone) {
+            h2 {
+                font-size: 36px;
+            }
+        }
+    }
+}

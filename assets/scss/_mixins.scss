@@ -1,0 +1,47 @@
+@mixin flex ($justify) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+}
+
+@mixin padding($pad1,$pad2) {
+    padding: $pad1 0 $pad2;
+}
+
+@mixin text($position) {
+    text-align: $position;
+}
+
+@mixin beforeIcon ($icon,$mar) {
+    content: $icon;
+    color: $white;
+    font-size: large;
+    font-family: "FontAwesome";
+    position: absolute;
+    margin-left: $mar;
+}
+
+@mixin social ($logo) {
+    content: $logo;
+    font-family: "FontAwesome";
+    margin: 0 15px;
+    @include responsive($phone){
+        margin: 0 5px;
+    }
+}
+
+@mixin display($item) {
+    display: $item;
+}
+
+@mixin responsive($device) {
+    @media only screen and (max-width: $device) {
+      @content;
+    }
+  }
+
+  @mixin responsive-min($device) {
+    @media only screen and (min-width: $device) {
+      @content;
+    }
+  }

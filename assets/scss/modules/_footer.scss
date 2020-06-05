@@ -1,0 +1,201 @@
+footer {
+    background-color: $lightblack;
+    @include padding(60px,30px);
+
+    .wrapper {
+        width: 82%;
+
+        .footer-container {
+            @include display(flex);
+
+            .follow {
+                width: 45%;
+
+                h4 {
+                    color: $white;
+                    font-size: $medium-large;
+                }
+
+                .social-link-red {
+                    width: $full;
+                    margin-top: 35px;
+                    li {
+                        width: 15%;
+                        &:first-of-type {
+                            a {
+                                &::before {
+                                    @include social('\f099');
+                                }
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            a {
+                                &::before {
+                                    @include social('\f09a');
+                                }
+                            }
+                        }
+
+                        &:nth-child(3) {
+                            a {
+                                &::before {
+                                    @include social('\f167');
+                                }
+                            }
+                        }
+
+                        &:nth-child(4) {
+                            a {
+                                &::before {
+                                    @include social('\f16d');
+                                }
+                            }
+                        }
+
+                        &:nth-child(5) {
+                            a {
+                                &::before {
+                                    @include social('\f0d5');
+                                }
+                            }
+                        }
+
+                        a {
+                            font-size: 0;
+                            padding: 10px 0;
+                            border-radius: 50%;
+                            color: $white;
+                            background-color: $lightred;
+                            
+                            &::before {
+                                font-size: $medium-large;
+                            }
+                            @include responsive-min($desktop) {
+                                &:hover {
+                                    background-color: $white;
+                                    color: $lightred;
+                                    transition: .4s;
+                                }
+                            }
+                        }
+                        @include responsive($phone){
+                            width: 18%;
+                            a {
+                                padding: 10px 15%;
+                            }
+                        }
+                    }
+                }
+
+                .footer-list {
+                    width: 50%;
+                    margin-top: 20px;
+                    float: left;
+
+                    li {
+                        line-height: 1.8;
+                        @include display(block);
+
+                        a {
+                            color: $white;
+                            font-size: $small;
+                            @include responsive-min($desktop) {
+                                &:hover {
+                                    color: $lightred;
+                                    transition: .3s;
+                                }
+                            }
+                        }
+                    }
+                }
+                @include responsive($tablet) {
+                    padding-bottom: 200px;
+                }
+            }
+
+            .footer-content {
+                .footer-head {
+                    margin-bottom: 20px;
+
+                    li {
+                        a {
+                            margin-right: 10px;
+                            color: $white;
+                            font-size: $medium-large;
+                            @include responsive($tablet){
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                    @include responsive($phone){
+                        margin: 50px 0 20px;
+                    }
+                }
+
+                p {
+                    margin: 10px 0;
+                    color: $white;
+                    font-size: $medium;
+                }
+
+                form {
+                    input {
+                        padding: 10px 27% 10px 3%;
+                        border-radius: 20px;
+                        border: none;
+                        margin-right: 20px;
+                        outline: none;
+                        @include text(left);
+
+                        @include responsive ($tablet) {
+                            padding: 10px 14%;
+                        }
+                    }
+
+                    a {
+                        padding: 10px 6%;
+                        border-radius: 20px;
+                        background-color: $lightred;
+                        color: $white;
+                        font-size: 16px;
+                        font-weight: $bold;
+                        @include responsive-min($desktop) {
+                            &:hover{
+                                background-color: transparent;
+                                color: $lightred;
+                                border: 2px solid $lightred;
+                                margin: -2px;
+                                transition: .2s;
+                            }
+                        }
+                        @include responsive($phone){
+                            margin: 10px 64px 0;
+                        }
+                    }
+                }
+
+                h5 {
+                    margin-bottom: 10px;
+                    color: $white;
+                    font-size: $medium;
+                }
+
+                .footer-sponser {
+                    img {
+                        border-radius: 4px;
+                    }
+                }
+            }
+            @include responsive($notebook) {
+                @include display(block);
+                .follow {
+                    width: $full;
+                }
+                .footer-content {
+                    width: $full;
+                }
+            }
+        }
+    }
+}
