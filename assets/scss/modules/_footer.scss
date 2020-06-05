@@ -126,6 +126,12 @@ footer {
                             @include responsive($tablet){
                                 font-size: 22px;
                             }
+                            @include responsive-min($desktop) {
+                                &:hover {
+                                    color: $lightred;
+                                    transition: .3s;
+                                }
+                            }
                         }
                     }
                     @include responsive($phone){

@@ -728,6 +728,12 @@ footer .wrapper .footer-container .footer-content .footer-head li a {
     font-size: 22px;
   }
 }
+@media only screen and (min-width: 1024px) {
+  footer .wrapper .footer-container .footer-content .footer-head li a:hover {
+    color: #fe525b;
+    transition: 0.3s;
+  }
+}
 @media only screen and (max-width: 540px) {
   footer .wrapper .footer-container .footer-content .footer-head {
     margin: 50px 0 20px;
